@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+        
+        
+        let answers = []
+        class Quiz extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    answers: []
+                };
+                
+                // this.addStrawberry = this.addStrawberry.bind(this);
+                // this.addBlueberry = this.addBlueberry.bind(this);
+                // this.addPeach = this.addPeach.bind(this);
+                // this.addLemon = this.addLemon.bind(this);
+                // this.addPear = this.addPear.bind(this);
+                // this.addOrange = this.addOrange.bind(this);
+                // this.giveResult = this.giveResult.bind(this);
+            }
+            
+            addStrawberry(q_num) {
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+                
+                console.log(orange_button)
+                document.getElementById(straw_button).style.backgroundColor = 'pink'
+                document.getElementById(blue_button).disabled = true;
+                document.getElementById(peach_button).disabled = true;
+                document.getElementById(pear_button).disabled = true;
+                document.getElementById(lemon_button).disabled = true;
+                document.getElementById(orange_button).disabled = true;
+                answers.push(1)
+                console.log("added the one to answers")
+                console.log(answers)
+            }
+            
+            addBlueberry(q_num){
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+                
+                console.log(orange_button)
+                document.getElementById(blue_button).style.backgroundColor = 'pink'
+                document.getElementById(straw_button).disabled = true;
+                document.getElementById(peach_button).disabled = true;
+                document.getElementById(pear_button).disabled = true;
+                document.getElementById(lemon_button).disabled = true;
+                document.getElementById(orange_button).disabled = true;
+                answers.push(2)
+                
+            }
+            
+            addPeach(q_num){
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+                
+                console.log(orange_button)
+                document.getElementById(peach_button).style.backgroundColor = 'pink'
+                document.getElementById(straw_button).disabled = true;
+                document.getElementById(blue_button).disabled = true;
+                document.getElementById(pear_button).disabled = true;
+                document.getElementById(lemon_button).disabled = true;
+                document.getElementById(orange_button).disabled = true;
+                answers.push(3)
+                
+            }
+            
+            addPear(q_num) {
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+                
+                console.log(orange_button)
+                document.getElementById(pear_button).style.backgroundColor = 'pink'
+                document.getElementById(straw_button).disabled = true;
+                document.getElementById(blue_button).disabled = true;
+                document.getElementById(peach_button).disabled = true;
+                document.getElementById(lemon_button).disabled = true;
+                document.getElementById(orange_button).disabled = true;              
+                answers.push(4)
+                
+                
+            }
+            
+            addLemon(q_num) {
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+                
+                console.log(orange_button)
+                document.getElementById(lemon_button).style.backgroundColor = 'pink'
+                document.getElementById(straw_button).disabled = true;
+                document.getElementById(blue_button).disabled = true;
+                document.getElementById(peach_button).disabled = true;
+                document.getElementById(pear_button).disabled = true;
+                document.getElementById(orange_button).disabled = true;                 
+                answers.push(5)
+
+                
+            }    
+                
+            addOrange(q_num){
+                let straw_button = 'button' + String(q_num) + '.1'
+                let blue_button = 'button' + String(q_num) + '.2'
+                let peach_button = 'button' + String(q_num) + '.3'
+                let pear_button = 'button' + String(q_num) + '.4'
+                let lemon_button = 'button' + String(q_num) + '.5'
+                let orange_button = 'button' + String(q_num) + '.6'
+
+                console.log(orange_button)
+                document.getElementById(orange_button).style.backgroundColor = 'pink'
+                document.getElementById(straw_button).disabled = true;
+                document.getElementById(blue_button).disabled = true;
+                document.getElementById(peach_button).disabled = true;
+                document.getElementById(pear_button).disabled = true;
+                document.getElementById(lemon_button).disabled = true;                
+                answers.push(6)
+
+                
+            } 
+            
+            restartQuiz() {
+                answers = []
+                document.getElementById("fruitResult").innerHTML = "";
+                document.getElementById("resultImg").src = 'images/blankpage.jpg';
+                let buttons = ['button1.1', 'button1.2', 'button1.3', 'button1.4', 'button1.5', 'button1.6',
+                'button2.1', 'button2.2', 'button2.3', 'button2.4', 'button2.5', 'button2.6',
+                'button3.1', 'button3.2', 'button3.3', 'button3.4', 'button3.5', 'button3.6',
+                'button4.1', 'button4.2', 'button4.3', 'button4.4', 'button4.5', 'button4.6',
+                'button5.1', 'button5.2', 'button5.3', 'button5.4', 'button5.5', 'button5.6',
+                'button6.1', 'button6.2', 'button6.3', 'button6.4', 'button6.5', 'button6.6',
+                'button7.1', 'button7.2', 'button7.3', 'button7.4', 'button7.5', 'button7.6',
+                'button8.1', 'button8.2', 'button8.3', 'button8.4', 'button8.5', 'button8.6',
+                'button9.1', 'button9.2', 'button9.3', 'button9.4', 'button9.5', 'button9.6',
+                'button10.1', 'button10.2', 'button10.3', 'button10.4', 'button10.5', 'button10.6']
+                
+                for(let button in buttons){
+                    console.log(buttons[button])
+                    document.getElementById(buttons[button]).style.backgroundColor = '#FD8664'
+                    document.getElementById(buttons[button]).disabled = false;
+                    document.getElementById('finalResult').style.backgroundColor = 'white';
+                }
+            }
+            
+            giveResult() {
+                
+                if(answers.length != 10){
+                    document.getElementById("fruitResult").innerHTML = "You haven't answered all the questions yet!";
+                }
+                else{
+                
+                let answer_occ = answers.reduce(function (acc, curr) {
+                return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+                }, {});
+                
+                
+                let max = 0
+                let max_object
+                for(let object in answer_occ){
+                    console.log(object)
+                    if(answer_occ[object] > max){
+                        max = answer_occ[object]
+                        max_object = object
+                    }
+                }
+                
+                console.log(answer_occ)
+                console.log(max)
+                console.log(max_object)
+                document.getElementById('finalResult').style.backgroundColor = '#FD8664'
+                if(max_object == 1){
+                    document.getElementById('fruitResult').innerHTML = "You are a strawberry! You are sweet and sassy. You work great on a team, just like a stawberry pairs well with everything! You are adaptable and are always willing to try something new."
+                    document.getElementById("resultImg").src= 'images/strawberrySticker.jpg';
+                }
+                if(max_object == 2){
+                    document.getElementById("fruitResult").innerHTML = "You are a blueberry! You are quiet and you love learning new things. You are very introspective and it shows through your creativity.";
+                    document.getElementById("resultImg").src= 'images/blueberrySticker.jpg';
+                }
+                if(max_object == 3){
+                    document.getElementById("fruitResult").innerHTML = "You are a peach! You are flirty and fun. You light up the room when you walk in and people are drawn to you because you are fun and outgoing."; 
+                    document.getElementById("resultImg").src= 'images/peachSticker.jpg';
+                }
+                if(max_object == 4){
+                    document.getElementById("fruitResult").innerHTML = "You are a pear! You are refined and enjoy the finer things in life. You are gentle and like to think deeply, making you more reserved.";
+                    document.getElementById("resultImg").src= 'images/pearSticker.jpg';
+                }
+                if(max_object == 5){
+                    document.getElementById("fruitResult").innerHTML = "You are a lemon! You are honest and people vaule your opinions. You have and optimistic view of life and are an independent person.";
+                    document.getElementById("resultImg").src= 'images/lemonSticker.jpg';
+                }
+                if(max_object == 6){
+                    document.getElementById("fruitResult").innerHTML = "You are an orange! You love being with your family. It takes a while for you to open up but when you do you are a reliable and caring friend.";
+                    document.getElementById("resultImg").src= 'images/orangeSticker.jpg';
+                }
+                
+                }
+            }
+            
+            render() {
+                return (
+                    <div id = 'page'> 
+                    <div id='header'> <p id='companyName'>FruitQuizzes</p> </div>
+                    <div id='titleSection'>
+                    <h2 id='pageTitle'> Find out what kind of fruit you are </h2>
+                    <img src = "images/abooutPicture.jpg" id='titlePicture'/>
+                    </div>
+                    <div id = 'Q'>
+                    <p id='title'> What does your friend group look like? </p>
+                    <img id='buddies' src='images/buddies.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('1')} id ='button1.1'>I have several for all the things I like to do</button>
+                       <button onClick={()=>this.addBlueberry('1')} id ='button1.2'>Just a couple close friends</button>
+                       <button onClick={()=>this.addPeach('1')} id ='button1.3'>I am always making new friends</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('1')} id ='button1.4'>I have a small group that shares my interests</button>
+                       <button onClick={()=>this.addLemon('1')} id ='button1.5'>I hang out with people but I don't have a single group</button>
+                       <button onClick={()=>this.addOrange('1')} id ='button1.6'>My family is the main people I hang out with</button>
+                       </div>
+                       </div>
+                       </div>
+                    <div id = 'Q'>
+                    <p id='title'> What is one of your hobbies? </p>
+                    <img id='buddies' src='images/hobbies.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('2')} id ='button2.1'>Sports</button>
+                       <button onClick={()=>this.addBlueberry('2')} id ='button2.2'>Reading</button>
+                       <button onClick={()=>this.addPeach('2')} id ='button2.3'>Dancing</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('2')} id ='button2.4'>Painting</button>
+                       <button onClick={()=>this.addLemon('2')} id ='button2.5'>Climbing/Hiking</button>
+                       <button onClick={()=>this.addOrange('2')} id ='button2.6'>Board Games</button>
+                       </div>
+                       </div>
+                       </div> 
+                    <div id = 'Q'>
+                    <p id='title'> What would be your dream vacation? </p>
+                    <img id='buddies' src='images/vacation.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('3')} id ='button3.1'>Japan</button>
+                       <button onClick={()=>this.addBlueberry('3')} id ='button3.2'>Swiss Alps</button>
+                       <button onClick={()=>this.addPeach('3')} id ='button3.3'>The Caribbean</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('3')} id ='button3.4'>France</button>
+                       <button onClick={()=>this.addLemon('3')} id ='button3.5'>United Kingdom</button>
+                       <button onClick={()=>this.addOrange('3')} id ='button3.6'>Disneyland</button>
+                       </div>
+                       </div>
+                       </div>  
+                    <div id = 'Q'>
+                    <p id='title'> What is your favorite food? </p>
+                    <img id='buddies' src='images/pizza.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('4')} id ='button4.1'>Sushi</button>
+                       <button onClick={()=>this.addBlueberry('4')} id ='button4.2'>Sandwhiches</button>
+                       <button onClick={()=>this.addPeach('4')} id ='button4.3'>Burgers</button>
+                       </div>
+                       <div id = 'section'>
+                       <button onClick={()=>this.addPear('4')} id ='button4.4'>Spaghetti</button>
+                       <button onClick={()=>this.addLemon('4')} id ='button4.5'>Mac and Cheese</button>
+                       <button onClick={()=>this.addOrange('4')} id ='button4.6'>Pizza</button>
+                       </div>
+                       </div>
+                       </div>
+                    <div id = 'Q'>
+                    <p id='title'> What is your dream job?</p>
+                    <img id='buddies' src='images/work.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('5')} id ='button5.1'>Nurse</button>
+                       <button onClick={()=>this.addBlueberry('5')} id ='button5.2'>Librarian</button>
+                       <button onClick={()=>this.addPeach('5')} id ='button5.3'>Athlete</button>
+                       </div>
+                       <div id = 'section'>
+                       <button onClick={()=>this.addPear('5')} id ='button5.4'>Professor</button>
+                       <button onClick={()=>this.addLemon('5')} id ='button5.5'>Engineer</button>
+                       <button onClick={()=>this.addOrange('5')} id ='button5.6'>Counselor/ Psychologist</button>
+                       </div>
+                       </div>
+                       </div> 
+                    <div id = 'Q'>
+                    <p id='title'> What is your favorite holiday?</p>
+                    <img id='buddies' src='images/holiday.jpg'/>
+                    <div id='sections'>
+                    <div id = 'section'>
+                       <button onClick={() => this.addStrawberry('6')} id ='button6.1'>The Fourth of July</button>
+                       <button onClick={()=>this.addBlueberry('6')} id ='button6.2'>Halloween</button>
+                       <button onClick={()=>this.addPeach('6')} id ='button6.3'>Valentines Day</button>
+                       </div>
+                       <div id = 'section'>
+                       <button onClick={()=>this.addPear('6')} id ='button6.4'>Thanksgiving</button>
+                       <button onClick={()=>this.addLemon('6')} id ='button6.5'>New Years</button>
+                       <button onClick={()=>this.addOrange('6')} id ='button6.6'>Christmas</button>
+                       </div>
+                       </div>
+                       </div>  
+                    <div id = 'Q'>
+                    <p id='title'> What is a board game you would play?</p>
+                    <img id='buddies' src='images/game.jpg'/>
+                    <div id = 'sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('7')} id ='button7.1'>Candy Land </button>
+                       <button onClick={()=>this.addBlueberry('7')} id ='button7.2'>Chess</button>
+                       <button onClick={()=>this.addPeach('7')} id ='button7.3'>Charades</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('7')} id ='button7.4'>Scrabble</button>
+                       <button onClick={()=>this.addLemon('7')} id ='button7.5'>Apples to Apples</button>
+                       <button onClick={()=>this.addOrange('7')} id ='button7.6'>Monopoly</button>
+                       </div>
+                       </div>
+                       </div> 
+                    <div id = 'Q'>
+                    <p id='title'> What is your go to breakfast?</p>
+                    <img id='buddies' src='images/cereal.jpg'/>
+                    <div id = 'sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('8')} id ='button8.1'>Its always changing</button>
+                       <button onClick={()=>this.addBlueberry('8')} id ='button8.2'>I do not eat breakfast</button>
+                       <button onClick={()=>this.addPeach('8')} id ='button8.3'>Bagel and Cream Cheese</button>
+                       </div>
+                       <div id = 'section'>
+                       <button onClick={()=>this.addPear('8')} id ='button8.4'>Avocado Toast</button>
+                       <button onClick={()=>this.addLemon('8')} id ='button8.5'>Oatmeal</button>
+                       <button onClick={()=>this.addOrange('8')} id ='button8.6'>Cereal</button>
+                       </div>
+                       </div>
+                       </div>  
+                    <div id = 'Q'>
+                    <p id='title'> What music genre do you listen to?</p>
+                    <img id='buddies' src='images/music.jpg'/>
+                    <div id = 'sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('9')} id ='button9.1'>A little bit of everything</button>
+                       <button onClick={()=>this.addBlueberry('9')} id ='button9.2'>Alternative Rock</button>
+                       <button onClick={()=>this.addPeach('9')} id ='button9.3'>Pop/Top Hits</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('9')} id ='button9.4'>Classical</button>
+                       <button onClick={()=>this.addLemon('9')} id ='button9.5'>Rap</button>
+                       <button onClick={()=>this.addOrange('9')} id ='button9.6'>Country</button>
+                       </div>
+                       </div>
+                       </div>                        
+                    <div id = 'Q'>
+                    <p id='title'> What is your favorite animal?</p>
+                    <img id='buddies' src='images/animal.jpg'/>
+                    <div id='sections'>
+                    <div id='section'>
+                       <button onClick={() => this.addStrawberry('10')} id ='button10.1'>Penguin</button>
+                       <button onClick={()=>this.addBlueberry('10')} id ='button10.2'>Elephant</button>
+                       <button onClick={()=>this.addPeach('10')} id ='button10.3'>Dog</button>
+                       </div>
+                       <div id='section'>
+                       <button onClick={()=>this.addPear('10')} id ='button10.4'>Cat</button>
+                       <button onClick={()=>this.addLemon('10')} id ='button10.5'>Tiger</button>
+                       <button onClick={()=>this.addOrange('10')} id ='button10.6'>Horse</button>
+                       </div>
+                       </div>
+                       </div>
+                       <div id = 'resultButton'>
+                       <button onClick={this.giveResult} id='result'> Get Results! </button>
+                       <button onClick={this.restartQuiz} id='restart'> Retake Quiz </button>
+                       </div>
+                       <div id = 'finalResult'>
+                       <p id='fruitResult'> </p>
+                       <img id='resultImg'/>
+                       </div>
+                       <div id = 'footer'> </div>
+                    </div> 
+
+                );
+            }
+        }
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Quiz />);
+    </script>
+    </body>
+
+</html>
